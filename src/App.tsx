@@ -1,25 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import './App.css';
+import StyledUl from "./models/styled/StyledUl";
+import StyledLi from "./models/styled/StyledLi";
+import {PATHS} from "./utils/constants";
+import Global from "./containers/Global";
+
+const Home = () => <h2>Home</h2>
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Router>
+        <div>
+          <StyledUl>
+            <StyledLi>
+              <Link to={PATHS.HOME}>Home</Link>
+            </StyledLi>
+            <StyledLi>
+              <Link to={PATHS.GLOBAL}>Global</Link>
+            </StyledLi>
+          </StyledUl>
+
+          <Route path={PATHS.HOME} exact component={Home} />
+          <Route path={PATHS.GLOBAL} component={Global}/>
+        </div>
+      </Router>
   );
 }
 
