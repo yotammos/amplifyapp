@@ -12,7 +12,7 @@ const Global: React.FC<Props> = (props: Props) => {
     const [data, setData] = useState(new Array<Covid19Data>())
 
     useEffect(() => {
-        data.length < 1 ? getData({ path: '/global' } as DetailedRequest)
+        data.length < 1 ? getData({ path: '/global', host: 'mossbeanstalk-env.eba-uetagxqr.us-east-2.elasticbeanstalk.com', port: 80 } as DetailedRequest)
                 .then((value: Covid19Data[]) => {
                     console.log(data)
                     setData(value)
