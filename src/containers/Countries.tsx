@@ -2,7 +2,7 @@ import * as React from 'react'
 import { useState, useEffect } from 'react'
 import { buildRequest, getData } from '../utils/restClient' // eslint-disable-line no-unused-vars
 import { buildStyledTable } from '../utils/table'
-import {capitalize, formatAmount} from '../utils/formatting'
+import { capitalize, formatAmount } from '../utils/formatting'
 import { COLUMN_NAMES, DATASETS_PATHS, PATHS } from '../utils/constants'
 import Covid19CountryData from '../models/Covid19CountryData' // eslint-disable-line no-unused-vars
 import StyledTr from '../models/styled/StyledTr'

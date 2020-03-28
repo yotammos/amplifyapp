@@ -4,7 +4,7 @@ import { match } from 'react-router-dom' // eslint-disable-line no-unused-vars
 import { buildRequest, getData } from '../utils/restClient' // eslint-disable-line no-unused-vars
 import Covid19DatedData from '../models/Covid19DatedData' // eslint-disable-line no-unused-vars
 import { buildStyledTable } from '../utils/table'
-import {capitalize, formatAmount} from '../utils/formatting'
+import { capitalize, formatAmount } from '../utils/formatting'
 import { COLUMN_NAMES } from '../utils/constants'
 import StyledTr from '../models/styled/StyledTr'
 import StyledTd from '../models/styled/StyledTd'
