@@ -2,7 +2,7 @@ import * as React from 'react'
 import { useState, useEffect } from 'react'
 import { buildRequest, getData } from '../utils/restClient' // eslint-disable-line no-unused-vars
 import { buildStyledTable } from '../utils/table'
-import { capitalize } from '../utils/formatting'
+import {capitalize, formatAmount} from '../utils/formatting'
 import { COLUMN_NAMES, DATASETS_PATHS, PATHS } from '../utils/constants'
 import Covid19CountryData from '../models/Covid19CountryData' // eslint-disable-line no-unused-vars
 import StyledTr from '../models/styled/StyledTr'
@@ -36,8 +36,8 @@ function Countries (props: Props): React.ReactElement {
 
   const buildStyledRow = (data: Covid19CountryData, index: number) => <StyledTr key={index + 1}>
     <StyledTd>{buildNameCol(data.name)}</StyledTd>
-    <StyledTd>{data.cases}</StyledTd>
-    <StyledTd>{data.deaths}</StyledTd>
+    <StyledTd>{formatAmount(data.cases)}</StyledTd>
+    <StyledTd>{formatAmount(data.deaths)}</StyledTd>
   </StyledTr>
 
   const buildRows = () => data.map((row: Covid19CountryData, index: number) => buildStyledRow(row, index))
